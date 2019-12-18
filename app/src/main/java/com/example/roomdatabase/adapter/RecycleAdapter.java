@@ -1,9 +1,13 @@
 package com.example.roomdatabase.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -51,6 +55,11 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
         public TextView tvKejuruan;
         public TextView tvNama;
         public TextView tvNim;
+        public Button btnEdit;
+        public Button btnDelete;
+        private RecyclerView.OnClickListener mListner
+
+
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -58,6 +67,21 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
             tvKejuruan = itemView.findViewById(R.id.tvKejuruan);
             tvNim = itemView.findViewById(R.id.tvNim);
             tvNama = itemView.findViewById(R.id.tvNama);
+            btnEdit = itemView.findViewById(R.id.btnEdit);
+            btnDelete = itemView.findViewById(R.id.btnDelete);
+
+
+            btnEdit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(mContext, EditData )
+                    Intent view = new Intent();
+                    view.setAction(Intent.ACTION_VIEW);
+                    view.setData(Uri.parse());
+                    startActivity(view);
+
+                }
+            });
         }
     }
 
